@@ -24,10 +24,6 @@
       - [ ] The application can read from the database.
       - [ ] The application can write to the database.
       - [ ] Connection errors are handled gracefully.
-  - [x] User Story 2: As a developer, I want to design the database schema.
-    - **Acceptance Criteria:**
-      - [ ] Database schema is documented.
-      - [ ] Relationships between tables are defined.
 
 - **Feature 2: API Endpoints**
   - [ ] User Story 1: As a user, I want to retrieve code snippets via an API.
@@ -45,11 +41,11 @@
       - [ ] Users receive a confirmation email upon successful registration.
 
 - **Feature 2: User Login**
-  - [ ] User Story 1: As a user, I want to log in to access my saved snippets.
+  - [x] User Story 1: As a user, I want to log in to access my saved snippets.
     - **Acceptance Criteria:**
-      - [ ] Users can log in with their email and password.
-      - [ ] Login errors are displayed clearly.
-      - [ ] Users are redirected to their dashboard upon successful login.
+      - [x] Users can log in with their email and password.
+      - [x] Login errors are displayed clearly.
+      - [x] Users are redirected to their dashboard upon successful login.
 
 ### Epic 4: Project Initialization
 - **Feature 1: Project Structure Setup**
