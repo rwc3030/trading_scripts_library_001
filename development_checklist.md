@@ -51,6 +51,6 @@
 - **Feature 1: Project Structure Setup**
   - **User Story 1: As a developer, I want to initialize the project structure.**
     - **Acceptance Criteria:**
-      1. Project directories are created.
-      2. Initial files are set up.
-      3. Basic configuration is established.
+      1. Project directories are created. [In Progress]
+      2. Initial files are set up. [In Progress]
+      3. Basic configuration is established. [In Progress]
