@@ -20,9 +20,10 @@ Our product **provides a centralized library of organized, ready-to-use code sni
 ## Product
 - **Product Name:** Pinescript Code Viewer
 - **Category:** Web Application
-- **Description:** A web application that displays a library of TradingView Pinescript code snippets, allowing users to browse, view, and copy code easily.
+- **Description:** A web application that displays a library of TradingView Pinescript code snippets, allowing users to browse, view, and copy code easily. The application will also feature a backend that generates new Pinescript strategies and organizes them into a user-friendly library.
 
 ## Business Goals
 - Establish a user-friendly platform that attracts a significant user base.
 - Generate revenue through premium features or subscriptions for advanced functionalities.
 - Build a strong brand presence in the trading community by providing valuable resources and tools.
+- Continuously update the library with new strategies and ideas to keep users engaged and returning to the platform.
