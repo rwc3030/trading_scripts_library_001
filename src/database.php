@@ -1,16 +1,18 @@
 <?php
-// Load environment variables
-require_once __DIR__ . '/../vendor/autoload.php';
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
-$dotenv->load();
+// Database connection
+require_once 'config/config.php';
 
-global $conn;
+function executeQuery($query) {
+    $conn = getDBConnection();
+    if ($conn->query($query) === FALSE) {
+        error_log("Database query failed: " . $conn->error);
+    }
+    $conn->close();
+}
 
-try {
-    $conn = new PDO("mysql:host=" . $_ENV['DB_HOST'] . ";dbname=" . $_ENV['DB_NAME'], $_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD']);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    error_log("Database connection error: " . $e->getMessage(), 3, __DIR__ . '/../logs/error.log');
-    header("Location: /public/error.php");
-    exit;
+// Example function to fetch snippets
+function fetchSnippets() {
+    $query = "SELECT * FROM trading_scripts_library_001_snippets";
+    executeQuery($query);
+    // Fetch data logic...
 }

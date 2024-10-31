@@ -7,6 +7,7 @@ function fetchSnippets() {
 
 function handleResponse(response) {
     if (!response.ok) {
+        logError('Network response was not ok');
         throw new Error('Network response was not ok');
     }
     return response.json();
@@ -14,7 +15,7 @@ function handleResponse(response) {
 
 function handleData(data) {
     if (data.status === 'error') {
-        console.error('Error fetching data:', data.message);
+        logError('Error fetching data: ' + data.message);
         return;
     }
     displaySnippets(data.snippets);
@@ -41,7 +42,12 @@ function createSnippetElement(snippet) {
 }
 
 function handleError(error) {
-    console.error('Fetch error:', error);
+    logError('Fetch error: ' + error);
+}
+
+function logError(message) {
+    console.error(message);
+    // Optionally send error to a logging service
 }
 
 // Initialize fetching of snippets
