@@ -19,6 +19,7 @@
                 <button type="submit">Login</button>
             </form>
             <div id="login-message"></div>
+            <div id="login-success-message" style="display:none; color: green;">Login successful!</div>
         </div>
         <p>Please log in to access your saved snippets.</p>
     </div>

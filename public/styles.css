@@ -63,3 +63,8 @@ pre {
     margin-top: 10px;
     color: red;
 }
+
+#login-success-message {
+    margin-top: 10px;
+    color: green;
+}

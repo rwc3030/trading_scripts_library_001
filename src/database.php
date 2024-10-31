@@ -13,6 +13,11 @@ function executeQuery($query) {
 // Example function to fetch snippets
 function fetchSnippets() {
     $query = "SELECT * FROM trading_scripts_library_001_snippets";
-    executeQuery($query);
-    // Fetch data logic...
+    $conn = getDBConnection();
+    $result = $conn->query($query);
+    if ($result === FALSE) {
+        error_log("Database query failed: " . $conn->error);
+        return [];
+    }
+    return $result->fetch_all(MYSQLI_ASSOC);
 }

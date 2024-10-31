@@ -50,5 +50,16 @@ function logError(message) {
     // Optionally send error to a logging service
 }
 
+// Handle login form submission
+document.getElementById('form-login').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    // Perform login logic here (e.g., send to server)
+    // For now, just log the values
+    console.log('Login attempted with:', email, password);
+});
+
 // Initialize fetching of snippets
 fetchSnippets();

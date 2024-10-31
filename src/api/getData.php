@@ -34,7 +34,7 @@ if ($category === false) {
 // Database connection (replace with your own connection details)
 $servername = "localhost";
 $username = "root";
-$password = "snapper";
+$password = "your_secure_password"; // Updated to a more secure placeholder
 $dbname = "project_name_example_database";
 
 $conn = new mysqli($servername, $username, $password, $dbname);

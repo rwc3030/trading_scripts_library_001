@@ -2,7 +2,7 @@
 // Database configuration
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
-define('DB_PASS', 'password');
+define('DB_PASS', 'your_secure_password'); // Updated to a more secure placeholder
 define('DB_NAME', 'trading_scripts_library_001');
 
 // Set up error logging
