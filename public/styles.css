@@ -32,3 +32,34 @@ pre {
     border-radius: 3px;
     overflow-x: auto;
 }
+
+#login-form {
+    margin-top: 20px;
+}
+
+#login-form input {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#login-form button {
+    padding: 10px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#login-form button:hover {
+    background-color: #4cae4c;
+}
+
+#login-message {
+    margin-top: 10px;
+    color: red;
+}

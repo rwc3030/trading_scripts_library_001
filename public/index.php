@@ -11,6 +11,15 @@
     <div id="content">
         <h1>Welcome to the Pinescript Code Viewer</h1>
         <div id="snippets"></div>
+        <div id="login-form">
+            <h2>Login</h2>
+            <form id="form-login">
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <div id="login-message"></div>
+        </div>
     </div>
     <script src="app.js"></script>
 </body>
