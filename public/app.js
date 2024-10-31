@@ -3,11 +3,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function fetchSnippets() {
         fetch('api/getData.php')
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
             .then(data => {
                 displaySnippets(data);
             })
-            .catch(error => console.error('Error fetching snippets:', error));
+            .catch(error => {
+                console.error('Error fetching snippets:', error);
+                const snippetsContainer = document.getElementById('snippets');
+                snippetsContainer.innerHTML = '<p>Error loading snippets. Please try again later.</p>';
+            });
     }
 
     function displaySnippets(snippets) {

@@ -34,11 +34,11 @@
 
 ### Epic 3: User Authentication
 - **Feature 1: User Registration**
-  - [ ] User Story 1: As a new user, I want to create an account to save my favorite snippets.
+  - [x] User Story 1: As a new user, I want to create an account to save my favorite snippets.
     - **Acceptance Criteria:**
-      - [ ] Users can register with a unique email and password.
-      - [ ] Registration errors are displayed clearly.
-      - [ ] Users receive a confirmation email upon successful registration.
+      - [x] Users can register with a unique email and password.
+      - [x] Registration errors are displayed clearly.
+      - [x] Users receive a confirmation email upon successful registration.
 
 - **Feature 2: User Login**
   - [x] User Story 1: As a user, I want to log in to access my saved snippets.

@@ -20,6 +20,7 @@
             </form>
             <div id="login-message"></div>
         </div>
+        <p>Please log in to access your saved snippets.</p>
     </div>
     <script src="app.js"></script>
 </body>
