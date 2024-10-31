@@ -24,6 +24,10 @@
       - [ ] The application can read from the database.
       - [ ] The application can write to the database.
       - [ ] Connection errors are handled gracefully.
+  - [x] User Story 2: As a developer, I want to design the database schema.
+    - **Acceptance Criteria:**
+      - [ ] Database schema is documented.
+      - [ ] Relationships between tables are defined.
 
 - **Feature 2: API Endpoints**
   - [ ] User Story 1: As a user, I want to retrieve code snippets via an API.
