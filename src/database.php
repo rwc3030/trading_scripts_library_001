@@ -10,6 +10,7 @@ try {
     $conn = new PDO("mysql:host=" . $_ENV['DB_HOST'] . ";dbname=" . $_ENV['DB_NAME'], $_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD']);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
+    error_log("Database connection error: " . $e->getMessage(), 3, __DIR__ . '/../logs/error.log');
+    header("Location: /public/error.php");
     exit;
 }
