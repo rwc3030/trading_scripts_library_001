@@ -25,6 +25,8 @@
 │       └── websocket-server.php   # WebSocket server script (optional, if real-time is required)
 ├── /config
 │   └── config.php                 # Configuration file for database settings
+├── /pinescript                    # Directory for Pinescript code snippets
+│   └── snippets.json              # JSON file to store Pinescript code snippets
 └── README.md                      # Documentation for setup and usage
 ```
 ---
@@ -49,6 +51,9 @@
 - **Username:** `root`
 - **Password:** `snapper`
 ---
+### Project Overview
+This project aims to develop a Python application that displays Pinescript code in a web window, allowing users to browse and copy working TradingView Pinescript trading strategy code snippets. The backend system will generate TradingView Pinescript scripts and organize them into a library that can be viewed on the web application. The application will primarily focus on allowing users to view the snippets, while the project will generate ideas and strategies to preload the web application's strategies library.
+
 ### STARTER TEMPLATE
 ---
 Revise this template with your project details:
