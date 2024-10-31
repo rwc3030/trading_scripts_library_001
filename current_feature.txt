@@ -1,5 +1,5 @@
 Next Feature to Implement:
-- **Feature 3: User Registration**
+- **Feature 1: User Registration**
   - **User Story 1: As a new user, I want to create an account to save my favorite snippets.**
     - **Acceptance Criteria:**
       - [ ] Users can register with a unique email and password.
