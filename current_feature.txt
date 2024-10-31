@@ -1,0 +1,7 @@
+Next Feature to Implement:
+- **Feature 2: User Login**
+  - **User Story 1: As a user, I want to log in to access my saved snippets.**
+    - **Acceptance Criteria:**
+      - [ ] Users can log in with their email and password.
+      - [ ] Login errors are displayed clearly.
+      - [ ] Users are redirected to their dashboard upon successful login.
