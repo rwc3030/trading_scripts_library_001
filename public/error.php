@@ -1,20 +1,16 @@
-<?php
-// Simple error handling page
-http_response_code(500);
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
-        h1 { color: #ff0000; }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Oops! Something went wrong.</h1>
-    <p>We're experiencing technical difficulties. Please try again later.</p>
+    <div id="content">
+        <h1>An Error Occurred</h1>
+        <p>We're sorry, but there was an error connecting to the database. Please try again later.</p>
+        <a href="index.php">Return to Home</a>
+    </div>
 </body>
 </html>

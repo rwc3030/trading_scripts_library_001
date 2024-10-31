@@ -10,12 +10,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 return response.json();
             })
             .then(data => {
+                if (data.status === 'error') {
+                    throw new Error(data.message);
+                }
                 displaySnippets(data);
             })
             .catch(error => {
                 console.error('Error fetching snippets:', error);
                 const snippetsContainer = document.getElementById('snippets');
-                snippetsContainer.innerHTML = '<p>Error loading snippets. Please try again later.</p>';
+                snippetsContainer.innerHTML = '<p>Error loading snippets: ' + error.message + '. Please try again later.</p>';
             });
     }
 
