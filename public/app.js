@@ -1,66 +1,48 @@
-document.addEventListener('DOMContentLoaded', function() {
-    fetchSnippets();
+function fetchSnippets() {
+    fetch('api/getData.php')
+        .then(handleResponse)
+        .then(handleData)
+        .catch(handleError);
+}
 
-    function fetchSnippets() {
-        fetch('api/getData.php')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                if (data.status === 'error') {
-                    throw new Error(data.message);
-                }
-                displaySnippets(data);
-            })
-            .catch(error => {
-                console.error('Error fetching snippets:', error);
-                const snippetsContainer = document.getElementById('snippets');
-                snippetsContainer.innerHTML = '<p>Error loading snippets: ' + error.message + '. Please try again later.</p>';
-            });
+function handleResponse(response) {
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
     }
+    return response.json();
+}
 
-    function displaySnippets(snippets) {
-        const snippetsContainer = document.getElementById('snippets');
-        snippetsContainer.innerHTML = '';
-
-        snippets.forEach(snippet => {
-            const snippetElement = document.createElement('div');
-            snippetElement.classList.add('snippet');
-            snippetElement.innerHTML = `
-                <h2>${snippet.title}</h2>
-                <pre>${snippet.code}</pre>
-                <p>Category: ${snippet.category}</p>
-            `;
-            snippetsContainer.appendChild(snippetElement);
-        });
+function handleData(data) {
+    if (data.status === 'error') {
+        console.error('Error fetching data:', data.message);
+        return;
     }
+    displaySnippets(data.snippets);
+}
 
-    const loginForm = document.getElementById('form-login');
-    loginForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
+function displaySnippets(snippets) {
+    const snippetsContainer = document.getElementById('snippets');
+    snippetsContainer.innerHTML = '';
 
-        fetch('api/login.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ email, password })
-        })
-        .then(response => response.json())
-        .then(data => {
-            const loginMessage = document.getElementById('login-message');
-            if (data.success) {
-                loginMessage.textContent = 'Login successful!';
-                // Redirect or update UI as needed
-            } else {
-                loginMessage.textContent = 'Login failed: ' + data.message;
-            }
-        })
-        .catch(error => console.error('Error during login:', error));
+    snippets.forEach(snippet => {
+        const snippetElement = createSnippetElement(snippet);
+        snippetsContainer.appendChild(snippetElement);
     });
-});
+}
+
+function createSnippetElement(snippet) {
+    const snippetElement = document.createElement('div');
+    snippetElement.classList.add('snippet');
+    snippetElement.innerHTML = `
+        <h2>${snippet.title}</h2>
+        <pre>${snippet.code}</pre>
+    `;
+    return snippetElement;
+}
+
+function handleError(error) {
+    console.error('Fetch error:', error);
+}
+
+// Initialize fetching of snippets
+fetchSnippets();
